@@ -1,0 +1,11 @@
+class Solution:
+    def removeDuplicates(self, s: str) -> str:
+        lst=[s[0]]
+        for i in range(1,len(s)):
+            if len(lst)==0 or lst[len(lst)-1]!=s[i]:
+                lst.append(s[i])
+            else:
+                lst=lst[:len(lst)-1]
+        s=''.join(lst)
+        return s            
+        
