@@ -1,0 +1,12 @@
+class Solution:
+    def findMaxProduct(self, arr):
+        ans, maxneg, mod = 1, float('-inf'), 10**9+7
+        for i in arr:
+            if i != 0:
+                ans *= i
+            if i < 0 and maxneg < i:
+                maxneg = i
+        if ans < 0:
+            ans //= maxneg
+        ans = ans%mod
+        return ans
